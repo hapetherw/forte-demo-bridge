@@ -1,0 +1,20 @@
+[features]
+seeds = false
+[programs.localnet]
+solana_contract = "GBogEvSDTdAJudzPy2EcgTqBy1Tmv8wc2gW3b5ynvxAF"
+
+[programs.devnet]
+solana_contract = "GBogEvSDTdAJudzPy2EcgTqBy1Tmv8wc2gW3b5ynvxAF"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "/home/bobby/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+locknft = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/nft_lock.test.ts"
+unlocknft = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/nft_unlock.test.ts"
+mytest = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/mytest.test.ts"

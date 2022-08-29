@@ -1,0 +1,49 @@
+version: "3.8"
+
+x-common-variables: &common-variables
+  POSTGRES_DB: oracle_db
+  POSTGRES_TEST_DB: oracle_test_db
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_PORT: 5432
+  POSTGRES_HOST: db
+  REDIS_HOST: redis
+
+volumes:
+  postgres-storage:
+services:
+  db:
+    container_name: oracle_db
+    image: postgres:14
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-storage:/var/lib/postgresql/data
+    environment: *common-variables
+    restart: unless-stopped
+
+  redis:
+    container_name: oracle_cache
+    depends_on:
+      - db
+    image: redis:latest
+    ports:
+      - 6379:6379
+    restart: unless-stopped
+    command: redis-server  
+
+  app:
+    container_name: oracle_app
+    build: 
+      context: .
+    depends_on:
+      - db
+      - redis
+    environment:
+      <<: *common-variables
+      MIX_ENV: dev
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/app  
+  
