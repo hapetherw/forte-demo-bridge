@@ -1,12 +1,12 @@
-# Bridge Bootcamp
+# NFT Bridge
 
-This repository serves as the template for bridge bootcamp. Please read and fallow all instructions in the README as you setup your bootcamp project.
+This repository serves as the template for bridge. Please read and fallow all instructions in the README as you setup your NFT bridge project.
 
-When you setup your bootcamp project, please follow the following naming convention for your source repository:
+When you setup your project, please follow the following naming convention for your source repository:
 
-`bootcamp-bridge-{bootcamp name}-{your github username}`
+`bootcamp-bridge-{name}-{your github username}`
 
-Please invite the bootcamp admin team as an administrator on your repo.
+Please invite the admin team as an administrator on your repo.
 
 
 ## Directory Structure
