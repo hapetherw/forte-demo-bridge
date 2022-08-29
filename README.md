@@ -4,7 +4,7 @@ This repository serves as the template for bridge. Please read and fallow all in
 
 When you setup your project, please follow the following naming convention for your source repository:
 
-`bootcamp-bridge-{name}-{your github username}`
+`nft-bridge-{name}-{your github username}`
 
 Please invite the admin team as an administrator on your repo.
 
